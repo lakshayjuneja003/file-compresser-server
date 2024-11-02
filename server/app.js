@@ -7,7 +7,9 @@ app.use(express.json({
     limit :"20kb"
 }));
 app.use(cors());
-// TODO : To configure dotenv
+app.get("/" , (req , res)=>{
+    res.send("hi there")
+})
 app.use(express.urlencoded({extended: true, limit: "16kb"}))
 app.use("/upload" , uploadRoutes)
 app.listen(3000,()=>{
